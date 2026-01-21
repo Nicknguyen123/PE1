@@ -17,6 +17,7 @@ int main() {
 	getchar();
 	Employee nv[1000];
 	for (int i = 0; i < n; i ++) {
+		printf("nv%d:\n", i + 1);
 		printf("Enter id: ");
 		fgets(nv[i].id, sizeof(nv[i].id), stdin);
 		nv[i].id[strcspn(nv[i].id, "\n")] = '\0';
@@ -33,7 +34,7 @@ int main() {
 	}
 	float total = 0;
 	for (int i = 0; i < n; i ++) {
-		printf("\n%s; %s; %f; %f; %f", nv[i].id, nv[i].fullName, 
+		printf("\nnv%d: %s; %s; %f; %f; %f =>", i + 1, nv[i].id, nv[i].fullName, 
 		nv[i].salary1, nv[i].salary2, nv[i].salary3);
 		total = nv[i].salary1 + nv[i].salary2 + nv[i].salary3;
 		if (total >= 10000000) {
